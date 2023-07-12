@@ -1,0 +1,669 @@
+import React from 'react'
+import { styled } from '@mui/system';
+import { Button,Grid, Typography} from '@mui/material';
+import Image from 'mui-image'
+import {useMediaQuery} from '@mui/material';
+import Header from './Header';
+import Footer from './Footer';
+import { useState } from 'react';
+import 'typeface-inter';
+import { Link, useNavigate } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import GoogleIcon from '@mui/icons-material/Google';
+import FacebookIcon from '@mui/icons-material/Facebook';
+import { IconButton } from '@mui/material';
+// import ImageSlider from './Slider';
+const StyledImage = styled(Image)(({ theme }) => ({
+  '& .mui-image-wrapper': {
+   backgroundColor:'red',
+
+  },
+}));
+const CustomButton = styled(Button)`
+  &:hover {
+    background-color: #086266; /* or specify the desired background color */
+  }
+`;
+const CustomButton1 = styled(Button)`
+  &:hover {
+    background-color: #F4F1F1; /* or specify the desired background color */
+  }
+`;
+
+function Landingpage() {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const mobile = useMediaQuery('(max-width:600px)');
+	const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+	const handleSignup = () => { 
+		navigate('/signup')
+	}
+  const handleClose = () => {
+    setAnchorEl(null);
+   
+  };
+  const handleClosepopup =() =>{
+    setOpen(false)
+    console.log('yess')
+  }
+  return (
+    <>
+ {mobile?'':<Header/>}
+     <Grid container lg={12}  sx={{marginTop:'99px'}}  >
+						<Grid container lg={10}sx={{margin:'auto'}}>
+              <Grid container lg={7} xs={12}>
+							<Grid item  lg={12} sx={{margin:mobile?'auto':''}} >
+							<Typography  sx={{ fontWeight:mobile?'800': '800', fontSize:mobile?'26px': '61px', color:'#1E1E1E',  lineHeight:mobile?'normal': '77px', fontFamily:'Inter',fontStyle:'normal'}}>
+              Discover
+the Next Bestseller!
+</Typography>
+					</Grid>
+							<Grid item  lg={12}  >
+						
+								 
+										<Grid item  lg={12} sx={{marginTop:'36px'}} >
+							<Typography  sx={{ fontWeight: '400', fontSize: mobile?'14px':'20px',fontFamily:'Inter',fontStyle:'normal',lineHeight: '130%'}}>4 Million books are published annually but these<br/>
+are only 1% of manuscripts that are submitted for publication.
+	</Typography>
+							</Grid>
+              <Grid item lg={12}sx={{marginTop:'16px'}} >
+									<Typography  sx={{ fontWeight: '400', fontSize:mobile?'14px': '20px',  fontFamily:'Inter',fontStyle:'normal',lineHeight: '130%'  }}>We believe there is no such thing as a bad story.</Typography>
+								</Grid>
+								<Grid item lg={10.5}sx={{marginTop:'16px'}} >
+									<Typography  sx={{ fontWeight: '400', fontSize:mobile?'14px': '20px',  fontFamily:'Inter',fontStyle:'normal',lineHeight: '130%'  }}>Choose a story that you want to read from a pool of manuscripts and make it your Next Bestseller.</Typography>
+								</Grid>
+								
+		
+					</Grid>	
+					<Grid container direction="row"  lg={8}  sx={{marginTop:'32px'}}>
+  <Grid item lg={6} xs={6} >
+    <CustomButton onClick={handleSignup} variant='contained' sx={{ borderRadius: '8px', textTransform: 'none',fontFamily:'Inter' ,fontSize:mobile?'12px': '20px', fontWeight: "500", lineHeight: "24px", width:mobile?'100px':  '188px', height:mobile?'36px': "54px" , backgroundColor: '#007F85', color: '#fff',fontStyle:'normal' }}>
+      Reader
+    </CustomButton>
+  </Grid>	
+  <Grid item lg={6} xs={6} >
+    <CustomButton onClick={handleSignup} variant='contained' sx={{ borderRadius: '8px', textTransform: 'none',fontFamily:'Inter', fontSize:mobile?'12px': '20px', fontWeight: "500", lineHeight: "24px", width: mobile?'100px': '188px', height:mobile?'36px': "54px", backgroundColor: '#007F85', color: '#fff',fontStyle:'normal' }}>
+      Writer
+    </CustomButton>
+  </Grid>
+</Grid>
+</Grid>
+<Grid Container lg={5} xs={12}  >
+							<Grid item  lg={12}  xs={12} sx={{marginTop:'-80px'}} >	
+								
+								
+             
+      {/* <Image
+        Duration={0}
+        src="https://drive.google.com/uc?export=view&id=12Krz59BrmVX6APRgDE5YzM6vck2zHWwS"
+        style={{ width: '456px', height: '456px', transitionDuration: '0', animation: '0', position: 'absolute', zIndex: 0 }}
+      /> */}
+                
+                <Image
+  Duration={0}
+  src="https://drive.google.com/uc?export=view&id=1UbkyF_8jfWWDSuOawh2y7SYjpqcIc7_1"
+  style={{
+    width: '529px',
+    height: '529px',
+    marginTop: mobile ? '156px' : '64px',
+    transitionDuration: '0',
+    animation: '0',
+    zIndex: 1,
+    borderRadius: '50%',
+  // To maintain the aspect ratio of the image within the circle
+  }}
+/>
+      
+   
+									
+									
+</Grid>			
+						
+				</Grid>
+			
+        <Grid container lg={12}   sx={{margin:'auto', backgroundColor:'#DAFDF5' ,width:mobile?'272px':'1140px',height:mobile?'416px':'256px', borderRadius:'26px',marginTop:'147px'}}>
+				  <Grid container lg={12} >
+           <Grid item lg={12} sx={{margin:'auto'}} >
+				   <Typography sx={{ textAlign: 'center',color:'#1E1E1E',fontFamily:'Inter' ,fontSize:mobile?'12px': '24px', fontWeight: "500", }}>Your manuscript can</Typography>
+			</Grid>
+				   
+			<Grid container lg={10} xs={12} sx={{marginTop:'25px',margin:'auto'}}>   
+				   
+  <Grid container lg={4}  >
+ 
+  <Grid item lg={12} xs={12} >
+    <Image
+      Duration={0}
+      src="https://drive.google.com/uc?export=view&id=1d3DewyjuC5teT-8mK7UIGWjgGNtH3v_S"
+      style={{
+       
+        width:mobile?'46px': '55px',
+        height:mobile?'46px': '51px',
+        transitionDuration: '0',
+        animation: '0',
+      }}
+    />
+    </Grid>
+    <Grid item lg={12} xs={12} >
+    <Typography  sx={{fontFamily:'Inter' ,fontSize:mobile?'14px': '24px', fontWeight: "600",textAlign:'center' }}>
+    Get 100% Publishing<br/> Assistance
+    </Typography>
+  
+    </Grid>
+
+     
+  </Grid>
+  
+  <Grid container lg={4} >
+  <Grid item lg={12}  xs={12}>
+  <Image
+    Duration={0}
+    src="https://drive.google.com/uc?export=view&id=1teodD3ze7If_q58EZv4QImceu_ErBlGR"
+    style={{
+   
+      width:mobile?'46px': '40px',
+      height:mobile?'46px': '45px',
+      transitionDuration: '0',
+      animation: '0',
+    }}
+
+  />
+  </Grid>
+  <Grid item lg={12} xs={12}>
+ <Typography  sx={{fontFamily:'Inter' ,fontSize:mobile?'14px': '24px', fontWeight: "600",textAlign:'center' }}>
+ Get Published
+    </Typography>
+</Grid>
+</Grid>
+<Grid container lg={4}>
+  <Grid item lg={12} xs={12}>
+  <Image
+    Duration={0}
+    src="https://drive.google.com/uc?export=view&id=1tWHZiFv7pBFfiU_kNT_JbMsmsxjXVHM4"
+    style={{
+   
+      width: mobile?'46px':'40px',
+      height: mobile?'46px':'45px',
+      transitionDuration: '0',
+      animation: '0',
+    }}
+
+  />
+  </Grid>
+  <Grid item lg={12} xs={12}>
+ <Typography  sx={{fontFamily:'Inter' ,fontSize:mobile?'14px': '24px', fontWeight: "600",textAlign:'center' }}>
+ Get Produced<br/>
+to movies/ series
+    </Typography>
+</Grid>
+</Grid>
+</Grid>
+</Grid>
+</Grid>	
+
+<Grid container lg={12}>
+  <Grid container lg={12} sx={{marginTop:'166px'}}>
+    <Grid container lg={6} >
+<Grid item lg={12} sx={{background:'url(https://drive.google.com/uc?export=view&id=1EmJ6pv2tSP2sVGyGNjRPZlDVma2F0w6L)',backgroundPosition:'center',backgroundRepeat:'no-repeat'}}>
+
+<Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1zTSjiI9_hRnr1uudQnUJmooRtNZxRabO"
+          style={{ width: '317px', height: '439px', transitionDuration: '0', animation: '0', zIndex: 1}}
+        />
+</Grid>    
+
+
+    </Grid>
+    <Grid container lg={6}  >
+  <Grid item lg={10}>
+    <Typography sx={{textAlign:"initial", marginTop: '32px', fontFamily: 'Inter', fontSize: '26px', fontWeight: "600", color: '#4CA591' }}>Slushie Bestsellers</Typography>
+  </Grid>
+  <Grid item lg={10}>
+    <Typography sx={{textAlign:'left', fontFamily: 'Inter', fontSize: '48px', fontWeight: "700", color: '#1E1E1E' }}>Wastra</Typography>
+  </Grid>
+  <Grid item lg={11} >
+    <Typography sx={{textAlign:'left', fontFamily: 'Inter', fontSize: '20px', fontWeight: "400", color: '#1E1E1E',lineHeight:'146%' }}>A tale of murder, revenge and politics in the dark alleys of Mumbai’s underworld. <br/>
+Written by Rohan Kailasam, Wastra is published by Nu Voice Press and is distributed by Simon and Schuster.<br/> Soon to be a motion picture.</Typography>
+  </Grid>
+  <Grid item lg={12} >
+    <Typography sx={{textAlign:'left', fontFamily: 'Inter', fontSize: '16px', fontWeight: "400", color: '#766A6A' ,marginTop:'12px'}}>Published by:</Typography>
+  </Grid>
+  <Grid item lg={1.5} sx={{marginTop:'8px'}} >
+  <Image
+    Duration={0}
+    src="https://drive.google.com/uc?export=view&id=1ALo4GanQJOsZM9XkaXMIQM0Yv5sjo_Tt"
+    style={{
+   
+      width: '63px',
+      height: '77px',
+      transitionDuration: '0',
+      animation: '0',
+    }}
+
+  />
+  </Grid>
+</Grid>
+
+  </Grid>
+</Grid>
+<Grid container lg={12}>
+  <Grid container lg={12} sx={{marginTop:'75px'}}>
+  <Grid container lg={6} >
+  <Grid item lg={10}>
+    <Typography sx={{textAlign:"initial", marginTop: '50px', fontFamily: 'Inter', fontSize: mobile?'16px':'26px', fontWeight: "600", color: '#4CA591' }}>Slushie Bestsellers</Typography>
+  </Grid>
+  <Grid item lg={10}>
+    <Typography sx={{textAlign:'left', fontFamily: 'Inter', fontSize: mobile?'14px': '48px', fontWeight:mobile?'700': "700", color: '#1E1E1E' }}>Kaliyuga</Typography>
+  </Grid>
+  <Grid item lg={11.5} >
+    <Typography sx={{textAlign:'left', fontFamily: 'Inter', fontSize: '20px', fontWeight: "400", color: '#1E1E1E',lineHeight:'146%' }}>Mythology, Science and Fantasy come together in a story of the battle between good and evil.<br/>
+Written by Harsheath Chauhan, Kaliyuga is published by Nu Voice Press and is distributed by Simon and Schuster.</Typography>
+  </Grid>
+  <Grid item lg={12} >
+    <Typography sx={{textAlign:'left', fontFamily: 'Inter', fontSize: '16px', fontWeight: "400", color: '#766A6A' ,marginTop:'12px'}}>Published by:</Typography>
+  </Grid>
+  <Grid item lg={1.5} sx={{marginTop:'8px'}} >
+  <Image
+    Duration={0}
+    src="https://drive.google.com/uc?export=view&id=1ALo4GanQJOsZM9XkaXMIQM0Yv5sjo_Tt"
+    style={{
+   
+      width: '63px',
+      height: '77px',
+      transitionDuration: '0',
+      animation: '0',
+    }}
+
+  />
+  </Grid>
+</Grid>
+<Grid container lg={6} >
+<Grid item lg={12} sx={{background:'url(https://drive.google.com/uc?export=view&id=1EmJ6pv2tSP2sVGyGNjRPZlDVma2F0w6L)',backgroundPosition:'center',backgroundRepeat:'no-repeat'}}>
+<Image
+									  Duration={0}
+									  src="https://drive.google.com/uc?export=view&id=1049I25plDfcO2fZOPABkTLFGI3IdUXTb"
+									  style={{ width:mobile?'197px': '317px', height:mobile?'270px': '439px', transitionDuration: '0', animation: '0', zIndex: 1 }}
+        />
+
+</Grid>    
+<Grid item lg={12}>
+       
+      </Grid>   
+
+    </Grid>
+  </Grid>
+</Grid>
+
+		
+<Grid container lg={12} sx={{ margin: 'auto', backgroundColor: '#DAFDF5', width: '1140px', height: '369px', borderRadius: '26px', marginTop: '147px' }}>
+  <Grid container lg={9} sx={{margin:'auto'}}>
+  <Grid container lg={12}  >
+    <Typography sx={{ textAlign: 'initial', marginTop: '40px', color: '#1E1E1E', fontFamily: 'Inter', fontSize: '24px', fontWeight: "500" }}>
+      Build a community of readers and get published by the best in the industry.
+    </Typography>
+  </Grid>
+ 
+					 
+						  
+  <Grid container lg={7}  >
+    <Grid item lg={12} sx={{marginTop:'56px'}}>
+      <img
+        Duration={0}
+        src="https://drive.google.com/uc?export=view&id=1ATrwCu9LPFuDFQxDhrpXLkHjil6fiT35"
+        style={{
+          width: '60px',
+          height: '60px',
+          transitionDuration: '0',
+          animation: '0',justifyContent:'start'
+        }}
+      />
+      </Grid>
+      <Grid item lg={10} sx={{marginTop:'26px'}}>
+      <Typography sx={{ fontFamily: 'Inter', fontSize: '20px',  textAlign: 'initial',lineHeight:'139%' }}>
+  <span style={{ color: '#1e1e1e',fontWeight: "600", }}>Readers:</span> Discover free and unlimited fascinating stories across genres. Support your favourite stories and help them get published.
+</Typography>
+
+</Grid>
+  </Grid>
+
+  <Grid container lg={5}  >
+    <Grid item lg={12} sx={{marginTop:'56px'}} >
+      <img
+        Duration={0}
+        src="https://drive.google.com/uc?export=view&id=1AEpZ8DNmcHJ-rXgGOVwm3RdJycwvl-qh"
+        style={{
+          width: '64px',
+          height: '64px',
+          transitionDuration: '0',
+          animation: '0',justifyContent:'start'
+        }}
+      />
+      </Grid>
+
+      <Grid item lg={11.5} sx={{marginTop:'26px'}} >
+      <Typography sx={{ fontFamily: 'Inter', fontSize: '20px',  textAlign: 'initial',lineHeight:'139%' }}>
+  <span style={{ color: '#1e1e1e',fontWeight: "600", }}>Writers:</span> Take your manuscript out of the slush pile and to your readers. Build a community of readers and get published.
+</Typography>
+
+</Grid>
+
+							  </Grid>
+							  
+               
+</Grid>
+
+</Grid>
+</Grid>
+
+
+<Grid container lg={12} sx={{ backgroundColor: '#FAF7F7', marginTop: '140px',  }}>
+  <Grid container lg={12} sx={{ margin: 'auto 64px', marginBottom: '64px' }}>
+    <Grid item lg={12}>
+      <Typography sx={{ textAlign: 'center', marginTop: '64px', color: '#1E1E1E', fontFamily: 'Inter', fontSize: '48px', fontWeight: "700" }}>
+        How <span style={{ color: '#007F85' }}>Slushie</span> Works
+      </Typography>
+    </Grid>
+    <Grid container lg={11} sx={{ margin: 'auto', marginTop: '80px' }}>
+      <Grid container lg={4} >
+        <Typography sx={{ color: '#007585', fontFamily: 'Inter', fontSize: '70px', fontWeight: "600" }}>1</Typography>
+        <Grid item lg={12}>
+          <Typography sx={{ fontFamily: 'Inter', fontSize: '40px', fontWeight: "600", textAlign: 'initial' }}>
+            Sign Up
+          </Typography>
+        </Grid>
+        <Grid item lg={11} sx={{ textAlign: 'left', width: '369px',}}>
+          <Typography sx={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: "400", textAlign: 'initial' }}>
+            Sign up and upload your finished manuscript. After verification, choose 3 chapters that will go live for readers.
+            Don’t worry your manuscript is 100% safe with us!
+          </Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container lg={4} >
+        <Typography sx={{ color: '#007585', fontFamily: 'Inter', fontSize: '70px', fontWeight: "600" }}>2</Typography>
+        <Grid item lg={12} >
+          <Typography sx={{ fontFamily: 'Inter', fontSize: '40px', fontWeight: "600", textAlign: 'initial' }}>
+            Get Votes
+          </Typography>
+        </Grid>
+        <Grid item lg={11} sx={{ textAlign: 'left' ,marginBottom:'32px'}}>
+          <Typography sx={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: "400", textAlign: 'initial' }}>
+            Get 500 votes on your manuscript for guaranteed publishing assistance.
+            Connect with your audience and leave the rest to us!
+          </Typography>
+        </Grid>
+      </Grid>
+
+      <Grid container lg={4} >
+        <Typography sx={{ color: '#007585', fontFamily: 'Inter', fontSize: '70px', fontWeight: "600" }}>3</Typography>
+        <Grid item lg={12}>
+          <Typography sx={{ fontFamily: 'Inter', fontSize: '40px', fontWeight: "600", textAlign: 'initial' }}>
+            Be Published
+          </Typography>
+        </Grid>
+        <Grid item lg={10} sx={{ textAlign: 'left' ,marginBottom:'32px'}}>
+          <Typography sx={{ fontFamily: 'Inter', fontSize: '20px', fontWeight: "400", textAlign: 'initial' }}>
+            Bridge the gap between your manuscript and your readers’ shelves.
+            Let’s give your readers their next favorite read!
+          </Typography>
+        </Grid>
+      </Grid>
+    </Grid>
+  </Grid>
+</Grid>
+
+
+
+<Grid container lg={12} sx={{marginTop:'116px',marginBottom:'116px'}}>
+  
+  <Grid item lg={12}>
+  <Typography sx={{ textAlign: 'center',marginTop:'48px',color:'#1E1E1E',fontFamily:'Inter' ,fontSize: '48px', fontWeight: "700", }}>Publishing Partners</Typography>
+  </Grid>
+  <Grid container lg={10} sx={{margin:'auto',}} >
+				  {/* <ImageSlider /> */}
+		
+      
+				  {/* <Grid item lg={1.7} sx={{marginTop:'63px'}} >
+          <Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1ALo4GanQJOsZM9XkaXMIQM0Yv5sjo_Tt"
+          style={{ width: '72px', height: '90px', transitionDuration: '0', animation: '0', }}
+        />
+          </Grid> */}
+          {/* <Grid item lg={1.7}  sx={{marginTop:'63px'}}>
+          <Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1rQQSZVoW6QRlotSY5CQgHt-r-GNEkKEX"
+          style={{ width: '106px', height: '103px', transitionDuration: '0', animation: '0', }}
+        />
+</Grid>
+<Grid item lg={1.7} sx={{marginTop:'63px'}} >
+<Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1CTsjPJg3DnjfU8RaTxlmkM1aA_ZSA0vL"
+          style={{ width: '106px', height: '103px', transitionDuration: '0', animation: '0', }}
+        />
+</Grid>
+<Grid item lg={1.7}  sx={{marginTop:'63px'}}>
+<Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1sdd7TzUHvpQA_vWdHk16DdSOYlyHnmzU"
+          style={{ width: '106px', height: '103px', transitionDuration: '0', animation: '0', }}
+        />
+</Grid>
+<Grid item lg={1.7} sx={{marginTop:'63px'}} >
+<Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1vxG9uPSOxvOLuOsSfu2TuCRlTGkDszeR"
+          style={{ width: '79px', height: '77px', transitionDuration: '0', animation: '0', }}
+        />
+</Grid>
+<Grid item lg={1.7} sx={{marginTop:'63px'}}>
+<Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1baDiiZu06dZ5JgiH5vcduuA1WQDOLuZ2"
+          style={{ width: '106px', height: '103px', transitionDuration: '0', animation: '0', }}
+        />
+</Grid>
+<Grid item lg={1.7} sx={{marginTop:'63px'}}>
+<Image
+          Duration={0}
+          src="https://drive.google.com/uc?export=view&id=1baDiiZu06dZ5JgiH5vcduuA1WQDOLuZ2"
+          style={{ width: '106px', height: '103px', transitionDuration: '0', animation: '0', }}
+        />
+</Grid> */}
+
+</Grid>
+
+</Grid>
+<Grid container lg={12} sx={{backgroundImage:'url(https://drive.google.com/uc?export=view&id=1gnNK8rfb0I0pm6OtLid_Sj_jBFGefXXe)'}}>
+  <Grid container lg={8} sx={{margin:'auto',marginTop:'86px',marginBottom:'86px',textAlign:'center'}}>
+<Grid item lg={12}>
+  <Typography sx={{fontSize:'48px',fontWeight:'700',fontFamily:'Inter',color:'#ffffff',}}>What’s brewing?</Typography>
+</Grid>
+
+<Grid item lg={12}>
+  <Typography sx={{fontSize:'20px',fontWeight:'400',fontFamily:'Inter',color:'#ffffff'}}>Welcome to the hotbed of contemporary fiction straight <br/>from the writer’s desk to the reader’s screens.</Typography>
+</Grid>
+<Grid container lg={6} sx={{margin:'auto',marginTop:'30px'}}>
+<Grid item lg={6}>
+    <CustomButton1 onClick={()=>setOpen(true)}  variant='contained' sx={{ borderRadius: '12px', textTransform: 'none',fontFamily:'Inter' ,fontSize: '16px', fontWeight: "500", lineHeight: "24px", width:  '180px', height: "48px" ,  backgroundColor: '#fff', color: '#007f85',fontStyle:'normal' }}>
+      Reader
+    </CustomButton1>
+    <Dialog open={open} PaperProps={{
+										style: {
+										  display: "flex",
+										  justifyContent: "flex-end",
+                      width: "382px", 
+      height: "455px",borderRadius:'26px'
+										  
+										}
+									  }}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+								>
+							
+        
+              <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' , fontSize: '26px',fontWeight:'700',fontFamily:'Inter', color: '#333333',marginTop: '20px' }}>
+      {"Join Slushie"}
+      <IconButton onClick={handleClosepopup} color="primary" style={{ position: 'absolute', right: 20, top: 20 }}>
+        <CloseIcon style={{ color: '#1e1e1e' }} />
+      </IconButton>
+    </DialogTitle>
+    <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' ,fontSize: '12px',fontWeight:'500',fontFamily:'Inter',marginTop: '-25px'  }}>
+      Choose your next  bestseller <br /> with just one click
+    </DialogTitle>
+          <DialogContent>
+          <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center' }}>
+      <Button
+        variant="contained"
+        color="primary"
+        startIcon={<FacebookIcon />}
+        style={{ borderRadius: '36px', backgroundColor: '#3D5A98',textTransform: 'none' }}
+      >
+        Sign up with Facebook
+      </Button>
+    </Grid>
+  
+    <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center' ,marginTop:'12px'}}>
+        <Button
+    
+      color="primary"
+      startIcon={<GoogleIcon style={{ color: 'brightred' }} />}
+      style={{ borderRadius: '36px', color: '#000000', border: '2px solid #000000',textTransform: 'none' }}
+    >
+      Sign up with Google
+    </Button>
+
+        </Grid>
+        <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center',marginTop:'8px' }}>
+      <Typography variant="body1" style={{ fontSize: '12px',fontFamily:'Inter', color: '#333333' }}>
+        OR
+      </Typography>
+    </Grid>
+        <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center',marginTop:'8px' }}>
+        <Button
+      variant="contained"
+      color="primary"
+      
+      style={{ borderRadius: '36px', backgroundColor: '#000000',textTransform: 'none',width:'270px',height:'46px' }}
+    >
+      Sign up with Email
+    </Button>
+        </Grid>
+        <Grid item lg={12} sx={{textAlign:'center',display:'flex',justifyContent:'center',marginTop:'12px'}}>
+       
+          <Typography sx={{fontSize: '12px',fontFamily:'Inter', color: '#333333',fontWeight:'500',color:'#5B5A5A'}}> Already have an account? <span style={{ color: '#1e1e1e',fontWeight:'600',fontFamily:'Inter',fontSize:'12px' }}>Login</span></Typography>
+        </Grid>
+        <Grid item lg={12} sx={{textAlign:'center',display:'flex',justifyContent:'center',marginTop:'26px'}}>
+          <Typography style={{ fontSize: '12px',fontFamily:'Inter', color: '#333333',fontWeight:'500' }}>By continuing, you agree to our <span style={{ color: '#1e1e1e',fontWeight:'600',fontFamily:'Inter',fontSize:'12px' }}>Terms of <br/> Service</span>   and <span style={{ color: '#1e1e1e',fontWeight:'600',fontFamily:'Inter',fontSize:'12px' }}>Privacy Policy.</span></Typography>
+        </Grid>
+      </DialogContent>
+          <DialogActions style={{ justifyContent: "space-between"}}>
+										
+          
+			
+						
+          </DialogActions>
+          </Dialog>
+  </Grid>	
+  <Grid item lg={6}>
+    <CustomButton1  onClick={()=>setOpen(true)} variant='contained' sx={{ borderRadius: '12px', textTransform: 'none',fontFamily:'Inter' ,fontSize: '16px', fontWeight: "500", lineHeight: "24px", width:  '180px', height: "48px" , backgroundColor: '#fff', color: '#007f85',fontStyle:'normal' }}>
+   Writer
+    </CustomButton1>
+    <Dialog open={open} PaperProps={{
+										style: {
+										  display: "flex",
+										  justifyContent: "flex-end",
+                      width: "382px", 
+      height: "455px",borderRadius:'26px'
+										  
+										}
+									  }}
+        onClose={handleClose}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+								>
+							
+        
+              <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' , fontSize: '26px',fontWeight:'700',fontFamily:'Inter', color: '#333333',marginTop: '20px' }}>
+      {"Join Slushie"}
+      <IconButton onClick={handleClosepopup} color="primary" style={{ position: 'absolute', right: 20, top: 20 }}>
+        <CloseIcon style={{ color: '#1e1e1e' }} />
+      </IconButton>
+    </DialogTitle>
+    <DialogTitle id="alert-dialog-title" style={{ textAlign: 'center' ,fontSize: '12px',fontWeight:'500',fontFamily:'Inter',marginTop: '-25px'  }}>
+      Choose your next  bestseller <br /> with just one click
+    </DialogTitle>
+          <DialogContent>
+          <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center' }}>
+      <Button
+        variant="contained"
+        color="primary"
+        startIcon={<FacebookIcon />}
+        style={{ borderRadius: '36px', backgroundColor: '#3D5A98',textTransform: 'none' }}
+      >
+        Sign up with Facebook
+      </Button>
+    </Grid>
+  
+    <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center' ,marginTop:'12px'}}>
+        <Button
+    
+      color="primary"
+      startIcon={<GoogleIcon style={{ color: 'brightred' }} />}
+      style={{ borderRadius: '36px', color: '#000000', border: '2px solid #000000',textTransform: 'none' }}
+    >
+      Sign up with Google
+    </Button>
+
+        </Grid>
+        <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center',marginTop:'8px' }}>
+      <Typography variant="body1" style={{ fontSize: '12px',fontFamily:'Inter', color: '#333333' }}>
+        OR
+      </Typography>
+    </Grid>
+        <Grid item lg={12} style={{ display: 'flex', justifyContent: 'center',marginTop:'8px' }}>
+        <Button
+      variant="contained"
+      color="primary"
+      
+      style={{ borderRadius: '36px', backgroundColor: '#000000',textTransform: 'none',width:'270px',height:'46px' }}
+    >
+      Sign up with Email
+    </Button>
+        </Grid>
+        <Grid item lg={12} sx={{textAlign:'center',display:'flex',justifyContent:'center',marginTop:'12px'}}>
+       
+          <Typography sx={{fontSize: '12px',fontFamily:'Inter', color: '#333333',fontWeight:'500',color:'#5B5A5A'}}> Already have an account? <span style={{ color: '#1e1e1e',fontWeight:'600',fontFamily:'Inter',fontSize:'12px' }}>Login</span></Typography>
+        </Grid>
+        <Grid item lg={12} sx={{textAlign:'center',display:'flex',justifyContent:'center',marginTop:'26px'}}>
+          <Typography style={{ fontSize: '12px',fontFamily:'Inter', color: '#333333',fontWeight:'500' }}>By continuing, you agree to our <span style={{ color: '#1e1e1e',fontWeight:'600',fontFamily:'Inter',fontSize:'12px' }}>Terms of <br/> Service</span>   and <span style={{ color: '#1e1e1e',fontWeight:'600',fontFamily:'Inter',fontSize:'12px' }}>Privacy Policy.</span></Typography>
+        </Grid>
+      </DialogContent>
+          <DialogActions style={{ justifyContent: "space-between"}}>
+										
+          
+			
+						
+          </DialogActions>
+          </Dialog>
+  </Grid>
+  </Grid>	
+  </Grid>
+</Grid>
+			
+			
+      </Grid>
+      <Footer/>
+      </>
+  )
+}
+
+export default Landingpage
